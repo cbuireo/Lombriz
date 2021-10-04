@@ -1,0 +1,80 @@
+package com.logisticadcn.AppPricipal;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.logisticadcn.clases.ConexionBase;
+
+public class prueba {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ConexionBase bd = new ConexionBase();
+		//Devolución de la consulta
+				ResultSet nrorecid = null;
+		String recid="";
+				try{
+			PreparedStatement insertaReporte = bd.getConnection().prepareStatement("s_AvlNovedadesSelect_MaxRecId");
+			nrorecid = insertaReporte.executeQuery();
+			while (nrorecid.next()) {
+				recid= nrorecid.getString(1);
+				//recid= Long.parseLong(nrorecid.getString(1));
+				System.out.println("##########################RECID= "+nrorecid.getString(1));
+			}
+			
+
+		}
+		// Handle any errors that may have occurred.
+		catch (Exception e) {
+//			txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//			txt.grabaError();
+			System.out.println(e.getMessage());
+			//e.printStackTrace();
+		}
+		
+		
+		
+		
+		bd.desconectar();
+		
+		ConexionBase bd2 = new ConexionBase();
+		
+		//Devolución de la consulta
+		ResultSet avll = null;
+try{
+	System.out.println("Entró");
+	PreparedStatement avl = bd.getConnection().prepareStatement("s_AvlNovedadesSelect_RELAY 1175,885301843)");
+	avll = avl.executeQuery();
+	while (avll.next()) {
+		System.out.println("##########################AVL= "+avll.getString(2));
+	}
+	
+
+}
+// Handle any errors that may have occurred.
+catch (Exception e) {
+//	txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//	txt.grabaError();
+	System.out.println(e.getMessage());
+	//e.printStackTrace();
+}
+bd2.desconectar();
+		
+
+//		
+//		
+//		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		
+//		try {
+//		Servidor serv = new Servidor(); //Se crea el servidor
+//
+//        System.out.println("Iniciando servidor\n");
+//        serv.startServer(); //Se inicia el servidor
+//		}catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+	}
+
+}
+//'20210902 10:47:05'

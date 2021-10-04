@@ -1,0 +1,42 @@
+10:55:01.978979700-->Connection refused: connect error al enviar por TCP AE382CN,041021104307,-27.76765,-064.27308,039,272,189|
+ No se pudo establecer la conexión
+10:55:04.105669500-->Connection refused: connect error al enviar por TCP ONC487,041021104303,-34.54124,-058.50613,026,336,189|
+ No se pudo establecer la conexión
+10:55:06.842016200-->Connection refused: connect error al enviar por TCP ONC487,041021104305,-34.54111,-058.50620,028,335,189|
+ No se pudo establecer la conexión
+10:55:08.979915-->Connection refused: connect error al enviar por TCP AC582FV,041021104310,-32.98761,-060.73477,010,202,189|
+ No se pudo establecer la conexión
+10:55:11.122419300-->Connection refused: connect error al enviar por TCP AD339BF,041021104309,-34.86437,-058.88087,069,312,443|
+ No se pudo establecer la conexión
+10:55:13.271012500-->Connection refused: connect error al enviar por TCP HQP284,041021104309,-32.91242,-060.96666,078,282,189|
+ No se pudo establecer la conexión
+10:55:15.432045600-->Connection refused: connect error al enviar por TCP JIS120,041021104305,-34.57689,-058.38959,047,296,708|
+ No se pudo establecer la conexión
+10:55:17.603580-->Connection refused: connect error al enviar por TCP JIS120,041021104305,-34.57689,-058.38959,047,296,81|
+ No se pudo establecer la conexión
+10:55:19.748472800-->Connection refused: connect error al enviar por TCP IVK859,041021104309,-34.60952,-058.68943,020,030,76|
+ No se pudo establecer la conexión
+10:55:21.886507800-->Connection refused: connect error al enviar por TCP TWC670,041021104303,-34.74566,-058.50595,000,338,713|
+ No se pudo establecer la conexión
+10:55:24.025848600-->Connection refused: connect error al enviar por TCP AD898WJ,041021104307,-34.55772,-058.42207,057,309,713|
+ No se pudo establecer la conexión
+12:48:19.270471500-->null error al buscar RECID
+12:48:34.277773-->null error de usuario y contraseña
+16:11:50.265651100-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:11:52.467964900-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:12:02.290482400-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:12:11.596448100-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:13:06.796289600-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:13:10.754132300-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:14:03.327984700-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:14:27.612718100-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:14:31.627331600-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:15:07.526149500-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:16:59.803900400-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:17:02.247626300-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:17:19.373775700-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:17:20.616141100-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:20:30.745880-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:20:31.886746200-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:20:41.721486500-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 
+16:55:33.164652800-->La operación solicitada no es compatible en conjuntos de resultados exclusivamente de reenvío. error al paresear la lista del SP s_AvlNovedadesSelect2 

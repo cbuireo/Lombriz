@@ -1,0 +1,50 @@
+13:36:31.485233500-->null error de usuario y contraseña
+15:23:34.996035400-->null error de usuario y contraseña
+15:23:35.408208100-->null error de usuario y contraseña
+15:23:35.915086200-->null error de usuario y contraseña
+15:23:36.278554600-->null error de usuario y contraseña
+15:23:36.659033300-->null error de usuario y contraseña
+15:23:37.009128300-->null error de usuario y contraseña
+15:23:37.374163600-->null error de usuario y contraseña
+15:23:37.727001200-->null error de usuario y contraseña
+15:23:38.075667100-->null error de usuario y contraseña
+15:23:38.435850300-->null error de usuario y contraseña
+15:23:38.954435-->null error de usuario y contraseña
+15:23:39.311303-->null error de usuario y contraseña
+15:23:39.722476900-->null error de usuario y contraseña
+15:23:40.065508900-->null error de usuario y contraseña
+15:23:40.417631900-->null error de usuario y contraseña
+15:23:40.823428600-->null error de usuario y contraseña
+15:23:41.247124200-->null error de usuario y contraseña
+15:23:41.723382600-->null error de usuario y contraseña
+15:23:42.114459400-->null error de usuario y contraseña
+15:23:42.461202900-->null error de usuario y contraseña
+15:23:42.804361-->null error de usuario y contraseña
+16:43:15.420126800-->Connection refused: connect error al enviar por TCP MOL800,011021163321,-32.92348,-068.76155,015,133,189|
+ No se pudo establecer la conexión
+16:43:17.543095-->Connection refused: connect error al enviar por TCP FLE307,011021163327,-34.82969,-058.50842,072,013,76|
+ No se pudo establecer la conexión
+16:43:19.663935500-->Connection refused: connect error al enviar por TCP BLF881,011021163323,-34.38144,-058.75055,079,327,189|
+ No se pudo establecer la conexión
+16:43:21.793806300-->Connection refused: connect error al enviar por TCP MJV388,011021163329,-34.44779,-058.95276,108,303,189|
+ No se pudo establecer la conexión
+16:43:23.920937800-->Connection refused: connect error al enviar por TCP NRI746,011021163324,-34.45465,-058.72008,032,236,189|
+ No se pudo establecer la conexión
+16:43:26.064939100-->Connection refused: connect error al enviar por TCP AC369CH_TEST,011021163329,-34.65717,-058.38116,007,293,76|
+ No se pudo establecer la conexión
+16:43:28.175844700-->Connection refused: connect error al enviar por TCP JIS120,011021163324,-34.16000,-058.98382,034,263,76|
+ No se pudo establecer la conexión
+16:43:30.279746200-->Connection refused: connect error al enviar por TCP JIS120,011021163324,-34.15949,-058.98322,026,231,76|
+ No se pudo establecer la conexión
+16:43:32.430815400-->Connection refused: connect error al enviar por TCP JIS120,011021163324,-34.16000,-058.98382,034,263,76|
+ No se pudo establecer la conexión
+16:43:34.545126700-->Connection refused: connect error al enviar por TCP JIS120,011021163325,-34.15851,-058.98719,019,305,76|
+ No se pudo establecer la conexión
+16:43:36.657809-->Connection refused: connect error al enviar por TCP JIS120,011021163323,-34.15947,-058.98266,014,257,76|
+ No se pudo establecer la conexión
+16:45:33.115919900-->Connection refused: connect error al enviar por TCP JIS120,011021163314,-34.15396,-058.98138,014,161,76|
+ No se pudo establecer la conexión
+16:45:35.248973100-->Connection refused: connect error al enviar por TCP JIS120,011021163313,-34.15033,-058.98513,009,209,76|
+ No se pudo establecer la conexión
+16:45:37.403008200-->Connection refused: connect error al enviar por TCP JIS120,011021163312,-34.14986,-058.98450,000,227,76|
+ No se pudo establecer la conexión

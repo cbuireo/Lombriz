@@ -1,0 +1,164 @@
+package com.logisticadcn.AppPricipal;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.logisticadcn.clases.ConexionBase;
+import com.logisticadcn.clases.EnviaTCP;
+import com.logisticadcn.clases.EnviaUDP;
+
+public class prueba {
+
+	public static void main(String[] args) {
+		
+		String trama="";
+		int pausa;
+		boolean salir = false;
+		long recid=0;
+		long recidAnterior=0;
+		System.out.println("esatdo salir= "+salir);
+		while (salir == false) {
+		ConexionBase bd = new ConexionBase();
+		//Devolución de la consulta
+				ResultSet nrorecid = null;
+		
+				try{
+			PreparedStatement insertaReporte = bd.getConnection().prepareStatement("s_AvlNovedadesSelect_MaxRecId");
+			nrorecid = insertaReporte.executeQuery();
+			while (nrorecid.next()) {
+				//recid= nrorecid.getString(1);
+				recid= Long.parseLong(nrorecid.getString(1));
+				System.out.println("##########################RECID= "+nrorecid.getString(1));
+			}
+			
+
+		}
+		// Handle any errors that may have occurred.
+		catch (Exception e) {
+//			txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//			txt.grabaError();
+			System.out.println(e.getMessage());
+			//e.printStackTrace();
+		}
+		
+		
+		
+		
+		bd.desconectar();
+		if(recid-recidAnterior==0) {
+			System.out.println("Buscando Novedades...");
+		} else {
+					System.out.println(recid+" cuenta  "+ (recid-recidAnterior));
+					//recid-=500;
+					
+					System.out.println(recid);
+					ConexionBase bd2 = new ConexionBase();
+					
+					//Devolución de la consulta
+					ResultSet avll = null;
+			
+					try{
+				System.out.println("Entró");
+				PreparedStatement avl = bd2.getConnection().prepareStatement("s_AvlNovedadesSelect 1723,"+recidAnterior);
+				avll = avl.executeQuery();
+				
+				//instanciamos la clase para enviar por udp o tcp según el ini
+				
+				
+				EnviaUDP udp = new EnviaUDP();
+				
+				
+				
+				while (avll.next()) {
+					
+					int sensorv2;
+					
+					trama+= avll.getString(3).replace(" ", "");  //domino
+					trama+=",";	//Separador
+					trama+= avll.getString(5);	//Fechareporte
+					trama+=",";	//Separador
+					trama+=avll.getString(12);	//Latitud
+					trama+=",";	//Separador
+					trama+=avll.getString(11);	//Longitud
+					trama+=",";	//Separador
+					trama+=(int) Double.parseDouble(avll.getString(7));//velocidad
+					trama+=",";	//Separador
+					trama+=(int) Double.parseDouble(avll.getString(13));	//curso
+					trama+=",";	//Separador
+					trama+=avll.getString(8);	//eventoID
+					trama+=",";	//Separador
+					trama+="0";
+					trama+=",";	//Separador
+					if(avll.getString(15).contains("RUS")&&avll.getString(15).contains("TI")&&!avll.getString(15).contains("NoDisp")) {
+						 sensorv2 = Integer.parseInt(avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 3), 2) );
+			             switch (sensorv2)
+			             {
+			                 case 0:
+			                     trama += avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 5), 3) + "+99+99";	//Sensor 0
+			                     break;
+			                 case 1:
+			                     trama += "+99" + avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 5), 3) + "+99"; //Sensor 1
+			                     break;
+			                 case 2:
+			                     trama += "+99+99" + avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 5), 3); // Sensor 2
+			                     break;
+			                 default:
+			                     break;
+			             } 
+						
+						
+					} else {
+						
+						trama+= "+99+99+99"; //Por defecto si no es reporte de temperatura
+					}
+					trama +="|"+(char) 0x0D+(char) 0x0A; //Fin de trama
+					
+					System.out.println(trama);
+					
+					EnviaTCP tcp = new EnviaTCP(trama,"0",0);
+					 			
+					tcp.envia();
+					
+					trama = "";
+					
+					pausa = 99999999;
+					
+					do {
+						pausa--;
+					}while (pausa !=0);
+				}
+							
+					}
+			
+			
+			// Handle any errors that may have occurred.
+			catch (Exception e) {
+			//	txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+			//	txt.grabaError();
+				System.out.println(e.getMessage());
+				//e.printStackTrace();
+			}
+			bd2.desconectar();
+			
+			recidAnterior = recid;	
+		}
+
+
+System.out.println("Vuelta");
+		}
+//		
+//		
+//		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		
+//		try {
+//		Servidor serv = new Servidor(); //Se crea el servidor
+//
+//        System.out.println("Iniciando servidor\n");
+//        serv.startServer(); //Se inicia el servidor
+//		}catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+	}
+
+}
+//'20210902 10:47:05'

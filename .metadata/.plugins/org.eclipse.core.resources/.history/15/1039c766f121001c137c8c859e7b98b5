@@ -1,0 +1,109 @@
+package com.logisticadcn.AppPricipal;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.logisticadcn.clases.ConexionBase;
+
+public class prueba {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ConexionBase bd = new ConexionBase();
+		//Devolución de la consulta
+				ResultSet nrorecid = null;
+		String recid="";
+				try{
+			PreparedStatement insertaReporte = bd.getConnection().prepareStatement("s_AvlNovedadesSelect_MaxRecId");
+			nrorecid = insertaReporte.executeQuery();
+			while (nrorecid.next()) {
+				recid= nrorecid.getString(1);
+				//recid= Long.parseLong(nrorecid.getString(1));
+				System.out.println("##########################RECID= "+nrorecid.getString(1));
+			}
+			
+
+		}
+		// Handle any errors that may have occurred.
+		catch (Exception e) {
+//			txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//			txt.grabaError();
+			System.out.println(e.getMessage());
+			//e.printStackTrace();
+		}
+		
+		
+		
+		
+		bd.desconectar();
+		
+		ConexionBase bd2 = new ConexionBase();
+		
+		//Devolución de la consulta
+		ResultSet avll = null;
+try{
+	System.out.println("Entró");
+	PreparedStatement avl = bd.getConnection().prepareStatement("s_AvlNovedadesSelect_RELAY 1175,883703144");
+	avll = avl.executeQuery();
+	while (avll.next()) {
+		System.out.println("##########################AVL= "+avll.getString(2));
+	}
+	
+
+}
+// Handle any errors that may have occurred.
+catch (Exception e) {
+//	txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//	txt.grabaError();
+	System.out.println(e.getMessage());
+	//e.printStackTrace();
+}
+bd2.desconectar();
+		
+//		FechaHora hora = new FechaHora(2021,9,2,10,47,05,-3);
+//		
+//		hora.sumarRestarHorasFecha();
+//		
+//		System.out.println(hora.getSumaRestaHoraFecha());
+//		ObtieneEquipo equipo = new ObtieneEquipo(">RGP220321184457-3443892-058712780000543005E5800;ID=I309;#42E3;*21<");
+//		
+//		equipo.solonromensaje();;
+//		equipo.nromensaje();
+//		//equipo.ObtieneIDEquipo();
+//		System.out.println(equipo.getNroMnesaje());
+//		System.out.println(equipo.getSoloNroMensaje());
+//		
+//		BorraTxtAntiguos archivos = new BorraTxtAntiguos();
+//		archivos.borra();
+//		Checksum chkvl = new Checksum(">SED31_BAK HD01++||HD02++||HD03++||HD04++||HD05++||HD06++ +- GR0&&&LOG GP;ID=H090;#962D;*08<");
+//		chkvl.chkvl();
+//		System.out.println(chkvl.getChksum());
+//	
+//		String mensaje = ">RUS00,905,130921151741-3232627-05825846095012300D40000,KM,0007.5;ID=D836;#3061;*69<";
+//		System.out.println("20"+mensaje.substring(15,(15+2))+" "+mensaje.substring(13,(13+2))+" "+mensaje.substring(11,(11+2))+" "+mensaje.substring(17,(17+2))+" "+mensaje.substring(19,(19+2))+" "+mensaje.substring(21,(21+2)) );
+//		
+//		//armo para restar las 3 horas
+//		FechaHora horaGps = new FechaHora(Integer.parseInt("20"+mensaje.substring(15,(15+2))),Integer.parseInt(mensaje.substring(13,(13+2))),Integer.parseInt(mensaje.substring(11,(11+2))),Integer.parseInt(mensaje.substring(17,(17+2))),Integer.parseInt(mensaje.substring(19,(19+2))),Integer.parseInt(mensaje.substring(21,(21+2))),-3);
+//		
+//		//Resta horas
+//		horaGps.sumarRestarHorasFecha();
+//		
+//		System.out.println(horaGps.getSumaRestaHoraFecha());
+//		
+//		
+//		
+//		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		
+//		try {
+//		Servidor serv = new Servidor(); //Se crea el servidor
+//
+//        System.out.println("Iniciando servidor\n");
+//        serv.startServer(); //Se inicia el servidor
+//		}catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+	}
+
+}
+//'20210902 10:47:05'

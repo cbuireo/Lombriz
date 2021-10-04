@@ -1,0 +1,127 @@
+package com.logisticadcn.AppPricipal;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.logisticadcn.clases.ConexionBase;
+
+public class prueba {
+
+	public static void main(String[] args) {
+		
+		String trama="";
+		ConexionBase bd = new ConexionBase();
+		//Devolución de la consulta
+				ResultSet nrorecid = null;
+		long recid=0;
+				try{
+			PreparedStatement insertaReporte = bd.getConnection().prepareStatement("s_AvlNovedadesSelect_MaxRecId");
+			nrorecid = insertaReporte.executeQuery();
+			while (nrorecid.next()) {
+				//recid= nrorecid.getString(1);
+				recid= Long.parseLong(nrorecid.getString(1));
+				System.out.println("##########################RECID= "+nrorecid.getString(1));
+			}
+			
+
+		}
+		// Handle any errors that may have occurred.
+		catch (Exception e) {
+//			txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//			txt.grabaError();
+			System.out.println(e.getMessage());
+			//e.printStackTrace();
+		}
+		
+		
+		
+		
+		bd.desconectar();
+		System.out.println(recid);
+		recid-=500;
+		System.out.println(recid);
+		ConexionBase bd2 = new ConexionBase();
+		
+		//Devolución de la consulta
+		ResultSet avll = null;
+
+		try{
+	System.out.println("Entró");
+	PreparedStatement avl = bd2.getConnection().prepareStatement("s_AvlNovedadesSelect 1723,"+recid);
+	avll = avl.executeQuery();
+	while (avll.next()) {
+		System.out.println(avll.getString(1));
+		int sensorv2;
+		trama+= avll.getString(3).replace(" ", "");  //domino
+		trama+=",";	//Separador
+		trama+= avll.getString(5);	//Fechareporte
+		trama+=",";	//Separador
+		trama+=avll.getString(12);	//Latitud
+		trama+=",";	//Separador
+		trama+=avll.getString(11);	//Longitud
+		trama+=",";	//Separador
+		trama+="vel "+avll.getString(7).substring((avll.getString(7).indexOf(".") + 1), 3)+"ssss   dddd"+avll.getString(7).indexOf(".",5);
+		//trama+=avll.getString(7).substring(0, 2); //velocidad
+		trama+=",";	//Separador
+		trama+=avll.getString(13);	//curso
+		trama+=",";	//Separador
+		trama+=avll.getString(8);	//eventoID
+		trama+=",";	//Separador
+		trama+="0";
+		trama+=",";	//Separador
+		if(avll.getString(15).contains("RUS")&&avll.getString(15).contains("TI")&&!avll.getString(15).contains("NoDisp")) {
+			 sensorv2 = Integer.parseInt(avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 3), 2) );
+             switch (sensorv2)
+             {
+                 case 0:
+                     trama += avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 5), 3) + "+99+99";	//Sensor 0
+                     break;
+                 case 1:
+                     trama += "+99" + avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 5), 3) + "+99"; //Sensor 1
+                     break;
+                 case 2:
+                     trama += "+99+99" + avll.getString(15).substring((avll.getString(15).indexOf("TI,") + 5), 3); // Sensor 2
+                     break;
+                 default:
+                     break;
+             } 
+			
+			
+		} else {
+			
+			trama+= "+99+99+99"; //Por defecto si no es reporte de temperatura
+		}
+		trama +="|"+(char) 0x0D+(char) 0x0A; //Fin de trama
+		
+		System.out.println(trama);
+		trama = "";
+	}
+	
+
+}
+// Handle any errors that may have occurred.
+catch (Exception e) {
+//	txt.setMensaje(e.getMessage()+" error al insertar en buffer ---->>"+insertSql);
+//	txt.grabaError();
+	System.out.println(e.getMessage());
+	//e.printStackTrace();
+}
+bd2.desconectar();
+		
+
+//		
+//		
+//		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		
+//		try {
+//		Servidor serv = new Servidor(); //Se crea el servidor
+//
+//        System.out.println("Iniciando servidor\n");
+//        serv.startServer(); //Se inicia el servidor
+//		}catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+	}
+
+}
+//'20210902 10:47:05'
